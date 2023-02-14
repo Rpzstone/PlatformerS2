@@ -7,8 +7,11 @@ public class Bridge : MonoBehaviour
     Vector2 mousePos = Vector2.zero;
     [SerializeField] Sprite newSprite;
     bool isBridged = false;
-    GameObject bridgeToCreate;
+    GameObject bridgeToCreate = null;
     GameObject pivot;
+
+    BoxCollider2D bc;
+    SpriteRenderer sr;
 
     float timeSeconds = 3;
 
@@ -26,17 +29,21 @@ public class Bridge : MonoBehaviour
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0) && isTimed == false)
+        if (Input.GetMouseButtonDown(0) && isTimed == false && bridgeToCreate == null)
         {   
             bridgeToCreate = new GameObject("Bridge");
             pivot = new GameObject("PivotPoint");
 
             bridgeToCreate.transform.parent = pivot.transform;
 
-            SpriteRenderer sr = bridgeToCreate.AddComponent<SpriteRenderer>() as SpriteRenderer;
+            sr = bridgeToCreate.AddComponent<SpriteRenderer>() as SpriteRenderer;
             sr.sprite = newSprite;
+            sr.color = new Color(1f, 1f, 1f, 0.5f);
+            Rigidbody2D rb = bridgeToCreate.AddComponent<Rigidbody2D>() as Rigidbody2D;
+            rb.bodyType = RigidbodyType2D.Static;
+            bc = bridgeToCreate.AddComponent<BoxCollider2D>() as BoxCollider2D;
+            bc.isTrigger = true;
 
-            
             pivot.transform.position = new Vector2(mousePos.x - 0.5f, mousePos.y);
             bridgeToCreate.transform.position = mousePos;
 
@@ -56,16 +63,27 @@ public class Bridge : MonoBehaviour
                     timeSeconds = pivot.transform.localScale.x / 2;
                 }
                 
-                StartCoroutine(LifeSpanBridge());
                 isBridged = false;
             }
+
         }
 
+        if (Input.GetKeyDown(KeyCode.Y) && isTimed == false)
+        {
+            pivot.transform.eulerAngles += new Vector3 (0, 0, 15);
+        }
+        if (Input.GetKeyDown(KeyCode.Return) && bridgeToCreate )
+        {
+            StartCoroutine(LifeSpanBridge());
+           
+        }
     }
 
     IEnumerator LifeSpanBridge()
     {
         isTimed = true;
+        bc.isTrigger = false;
+        sr.color = new Color(1f, 1f, 1f, 1f);
         yield return new WaitForSeconds(timeSeconds);
         Destroy(bridgeToCreate);
         Destroy(pivot);
