@@ -7,6 +7,7 @@ public class Bridge : MonoBehaviour
     Vector2 mousePos = Vector2.zero;
     [SerializeField] Sprite newSprite;
     bool isBridged = false;
+    bool stopBridge = false;
     GameObject bridgeToCreate = null;
     GameObject pivot;
 
@@ -64,6 +65,7 @@ public class Bridge : MonoBehaviour
                 }
                 
                 isBridged = false;
+                stopBridge = true;
             }
 
         }
@@ -74,8 +76,16 @@ public class Bridge : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Return) && bridgeToCreate )
         {
+            stopBridge = false;
             StartCoroutine(LifeSpanBridge());
            
+        }
+
+        if(Input.GetKeyDown(KeyCode.Backspace) && stopBridge )
+        {
+            stopBridge = false;
+            Destroy(bridgeToCreate);
+            Destroy(pivot);
         }
     }
 
