@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
+
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public BarreDeVie healthBar;
 
-    [SerializeField] GameObject hitboxDMG;
+    [SerializeField] GameObject ennemis;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         // test pour voir si ca fonctionne
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(20);
         }
@@ -51,13 +51,13 @@ public class PlayerHealth : MonoBehaviour
     {
         while (isInvincible)
         {
-            hitboxDMG.SetActive(false);
+            ennemis.SetActive(false);
             graphics.color = new Color(1f, 1f, 1f, 0f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
             graphics.color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
 
-            hitboxDMG.SetActive(true);
+            ennemis.SetActive(true);
         }
         Debug.Log("Coroutine1");
     }
@@ -69,4 +69,3 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Coroutine2");
     }
 }
-*/
