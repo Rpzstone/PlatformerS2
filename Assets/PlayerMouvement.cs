@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class PlayerMouvement : MonoBehaviour
 {
     Rigidbody2D rb;
     float moveSpeedHorizontal = 5f;
@@ -11,12 +11,13 @@ public class Player1 : MonoBehaviour
     [SerializeField] bool isJumping = false;
     [SerializeField] bool canJump = false;
 
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        gameObject.SetActive(true);
 
     }
 
@@ -25,31 +26,14 @@ public class Player1 : MonoBehaviour
     {
 
         horizontalValue = Input.GetAxis("Horizontal");
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
 
         if (Input.GetButtonDown("Jump") && canJump)
         {
-
+            canJump = true;
             isJumping = true;
 
         }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            SpriteRenderer Player1 = GetComponent<SpriteRenderer>();
-            Player1.enabled = false;
-            transform.position = transform.position + new Vector3(horizontalInput * moveSpeedHorizontal * Time.deltaTime, verticalInput * Time.deltaTime, 0);
-        }
-
-        if (Input.GetKeyUp(KeyCode.J))
-        {
-            SpriteRenderer Player1 = GetComponent<SpriteRenderer>();
-            Player1.enabled = true;
-            transform.position = transform.position + new Vector3(horizontalInput * moveSpeedHorizontal * Time.deltaTime, verticalInput * Time.deltaTime, 0);
-        }
-
-
+       
         //Debug.Log(horizontalValue);
     }
     void FixedUpdate()
@@ -61,8 +45,23 @@ public class Player1 : MonoBehaviour
             canJump = false;
         }
         rb.velocity = new Vector2(horizontalValue * moveSpeedHorizontal, rb.velocity.y);
-        canJump = true;
+        
 
 
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "sol")
+        {
+            canJump = true;
+        }
+    }
+   
+    
+        
+        
+
+ 
+   
 }
