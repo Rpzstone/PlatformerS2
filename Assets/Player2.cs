@@ -10,6 +10,7 @@ public class Player2 : MonoBehaviour
     float jumpForce = 10f;
     [SerializeField] bool isJumping = false;
     [SerializeField] bool canJump = false;
+    
 
 
 
@@ -17,6 +18,8 @@ public class Player2 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -36,15 +39,13 @@ public class Player2 : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.H))
         {
-            SpriteRenderer Player2 = GetComponent<SpriteRenderer>();
-            Player2.enabled = true;
+            gameObject.SetActive(false);
             transform.position = transform.position + new Vector3(horizontalInput * moveSpeedHorizontal * Time.deltaTime, verticalInput * Time.deltaTime, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            SpriteRenderer Player2 = GetComponent<SpriteRenderer>();
-            Player2.enabled = false;
+            gameObject.SetActive(true);
             transform.position = transform.position + new Vector3(horizontalInput * moveSpeedHorizontal * Time.deltaTime, verticalInput * Time.deltaTime, 0);
         }
 
