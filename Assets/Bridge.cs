@@ -30,7 +30,7 @@ public class Bridge : MonoBehaviour
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0) && isTimed == false && bridgeToCreate == null)
+        if  (Input.GetMouseButtonDown(0) && isTimed == false && bridgeToCreate == null )
         {   
             bridgeToCreate = new GameObject("Bridge");
             pivot = new GameObject("PivotPoint");
