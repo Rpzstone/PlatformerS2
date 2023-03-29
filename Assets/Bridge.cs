@@ -8,7 +8,6 @@ public class Bridge : MonoBehaviour
     [SerializeField] Sprite newSprite;
     bool bridgeUp = false;
     GameObject bridgeToCreate = null;
-    GameObject pivot;
     public GameObject bridge;
 
     BoxCollider2D bc;
@@ -19,7 +18,7 @@ public class Bridge : MonoBehaviour
 
     float timeSeconds = 3;
 
-    bool isTimed = false;
+    
 
     // Start is called before the first frame update
     void Start()

@@ -27,7 +27,7 @@ public class ScoreInterface : MonoBehaviour
         textMeshPro.text = "Score : "+score.ToString();
         if(score == 1)
         {
-            player2Ref.GetComponent<SpriteRenderer>().color = Color.red;
+            player2Ref.GetComponent<SpriteRenderer>().color = Color.green;
         }
     }
 }
