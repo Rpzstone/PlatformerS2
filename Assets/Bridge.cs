@@ -6,13 +6,16 @@ public class Bridge : MonoBehaviour
 {
     Vector2 mousePos = Vector2.zero;
     [SerializeField] Sprite newSprite;
-    bool isBridged = false;
-    bool stopBridge = false;
+    bool bridgeUp = false;
     GameObject bridgeToCreate = null;
     GameObject pivot;
+    public GameObject bridge;
 
     BoxCollider2D bc;
     SpriteRenderer sr;
+
+    Vector3 startLocation;
+    Vector3 endLocation;
 
     float timeSeconds = 3;
 
@@ -21,13 +24,53 @@ public class Bridge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0) && !bridgeToCreate)
+        {
+            startLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            startLocation.z = 0;
 
+            bridgeToCreate = Instantiate(bridge);
+            bridgeToCreate.transform.position = startLocation;
+        }
+
+        if (Input.GetMouseButtonUp(0) && !bridgeUp && bridgeToCreate)
+        {
+            bridgeUp = true;
+            bridgeToCreate.GetComponentInChildren<BoxCollider2D>().enabled = true;
+            Debug.DrawLine(startLocation, endLocation);
+            StartCoroutine(LifeSpanBridge());
+        }
+
+        if (Input.GetMouseButton(0) && !bridgeUp)
+        {
+            endLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            endLocation.z = 0;
+            Vector3 direction = (endLocation - startLocation).normalized;
+            if (bridgeToCreate)
+            {
+                float atan2 = Mathf.Atan2(direction.y, direction.x);
+                bridgeToCreate.transform.rotation = Quaternion.Euler(0f, 0f, atan2 * Mathf.Rad2Deg);
+                bridgeToCreate.transform.localScale = new Vector3(Vector3.Distance(startLocation, endLocation), 1.0f, 1.0f);
+
+            }
+
+
+            //Debug.DrawLine(startLocation, endLocation);
+        }
+
+
+
+
+        //Debug.DrawLine(startLocation, endLocation);
+
+
+        /*
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if  (Input.GetMouseButtonDown(0) && isTimed == false && bridgeToCreate == null )
@@ -87,16 +130,13 @@ public class Bridge : MonoBehaviour
             Destroy(bridgeToCreate);
             Destroy(pivot);
         }
+    */
     }
 
     IEnumerator LifeSpanBridge()
     {
-        isTimed = true;
-        bc.isTrigger = false;
-        sr.color = new Color(1f, 1f, 1f, 1f);
         yield return new WaitForSeconds(timeSeconds);
+        bridgeUp = false;
         Destroy(bridgeToCreate);
-        Destroy(pivot);
-        isTimed = false;
     }
 }

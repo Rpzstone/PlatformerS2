@@ -6,10 +6,11 @@ using UnityEngine;
 public class swap_Player : MonoBehaviour
 {
     [SerializeField] GameObject OtherPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,8 +21,6 @@ public class swap_Player : MonoBehaviour
             OtherPlayer.SetActive(true);
             OtherPlayer.transform.position = gameObject.transform.position;
             gameObject.SetActive(false);
-            
-          
         }
     }
 }
