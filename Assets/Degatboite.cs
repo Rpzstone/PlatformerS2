@@ -19,6 +19,7 @@ public class Degatboite : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        /*
         if (collision.transform.name == "Player1")
         {
 
@@ -35,6 +36,12 @@ public class Degatboite : MonoBehaviour
 
 
         }
+        */
 
+    }
+
+    public void TakeDamage()
+    {
+        Debug.Log("TakeDamage");
     }
 }

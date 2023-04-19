@@ -8,6 +8,7 @@ public class PlayerMouvement : MonoBehaviour
     float moveSpeedHorizontal = 5f;
     float horizontalValue;
     float jumpForce = 5f;
+    public float bounce;
     [SerializeField] bool isJumping = false;
     [SerializeField] bool canJump = false;
 
@@ -57,11 +58,30 @@ public class PlayerMouvement : MonoBehaviour
             canJump = true;
         }
     }
-   
-    
-        
-        
 
- 
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision " + collision.gameObject.name + " " + collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("ennemis"))
+        {
+            if (rb.velocity.y < 0)
+            {
+                // Destruction ennemi
+                Debug.Log("destruction");
+                collision.gameObject.GetComponent<Degatboite>().TakeDamage();
+                
+            } else
+            {
+                // Dommage
+                Debug.Log("dommage");
+            }
+        }
+    }
+
+
+
+
+
+
+
 }

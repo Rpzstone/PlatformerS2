@@ -31,4 +31,8 @@ public class EnemyPatrol : MonoBehaviour
             
         }
     }
+    private void OnDestroy()
+    {
+        Debug.Log("ennemie dead");
+    }
 }

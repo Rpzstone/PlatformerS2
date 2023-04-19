@@ -9,6 +9,7 @@ public class Bridge : MonoBehaviour
     bool bridgeUp = false;
     GameObject bridgeToCreate = null;
     public GameObject bridge;
+    [SerializeField] GameObject player1;
 
     BoxCollider2D bc;
     SpriteRenderer sr;
@@ -29,6 +30,8 @@ public class Bridge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!player1.activeSelf) return;
+
         if (Input.GetMouseButtonDown(0) && !bridgeToCreate)
         {
             startLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
