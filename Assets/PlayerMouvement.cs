@@ -7,7 +7,7 @@ public class PlayerMouvement : MonoBehaviour
     Rigidbody2D rb;
     float moveSpeedHorizontal = 5f;
     float horizontalValue;
-    float jumpForce = 5f;
+    float jumpForce = 6F;
     public float bounce;
     [SerializeField] bool isJumping = false;
     [SerializeField] bool canJump = false;
