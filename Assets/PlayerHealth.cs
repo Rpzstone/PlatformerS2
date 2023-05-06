@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 50;
     public int currentHealth;
     public bool isInvincible = false;
     public SpriteRenderer graphics;
@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         // test pour voir si ca fonctionne
         if (Input.GetKeyDown(KeyCode.P))
         {
-            //TakeDamage(20);
+            TakeDamage(34);
         }
     }
 
