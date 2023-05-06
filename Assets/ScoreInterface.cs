@@ -29,5 +29,17 @@ public class ScoreInterface : MonoBehaviour
         {
             player2Ref.GetComponent<SpriteRenderer>().color = Color.green;
         }
+        if (score == 2)
+        {
+            player2Ref.GetComponent<SpriteRenderer>().color = Color.black;
+        }
+        if (score == 3)
+        {
+            player2Ref.GetComponent<SpriteRenderer>().color = Color.cyan;
+        }
+        if (score == 4)
+        {
+            player2Ref.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 }

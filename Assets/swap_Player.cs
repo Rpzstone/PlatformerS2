@@ -16,7 +16,7 @@ public class swap_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H) | (Input.GetButtonDown("Fire1")))
+        if (Input.GetKeyDown(KeyCode.H)) /*| (Input.GetButtonDown("Fire1"))*/
         {
             OtherPlayer.SetActive(true);
             OtherPlayer.transform.position = gameObject.transform.position;
