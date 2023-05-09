@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 56718920}
   - component: {fileID: 56718919}
   m_Layer: 0
-  m_Name: sol (14)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 99596571}
   - component: {fileID: 99596570}
   m_Layer: 0
-  m_Name: sol (3)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 173206858}
   - component: {fileID: 173206857}
   m_Layer: 0
-  m_Name: sol (16)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2691,7 +2691,7 @@ GameObject:
   - component: {fileID: 737611542}
   - component: {fileID: 737611541}
   m_Layer: 0
-  m_Name: sol (1)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2927,8 +2927,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747775627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.61, y: -3.68, z: 0}
-  m_LocalScale: {x: 6.5796723, y: 1, z: 1}
+  m_LocalPosition: {x: -21.36, y: -3.6131, z: 0}
+  m_LocalScale: {x: 2.466743, y: 1.5823807, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 602476806}
@@ -2947,18 +2947,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005176544, y: -0.004034549}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.725, y: 0.715}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6936316, y: 0.6207419}
   m_EdgeRadius: 0
 --- !u!212 &747775630
 SpriteRenderer:
@@ -3001,7 +3001,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9664b0bf64964a2458aa8feac31ab755, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3751,7 +3751,7 @@ GameObject:
   - component: {fileID: 968353737}
   - component: {fileID: 968353736}
   m_Layer: 0
-  m_Name: sol (12)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4084,7 +4084,7 @@ GameObject:
   - component: {fileID: 986828074}
   - component: {fileID: 986828073}
   m_Layer: 0
-  m_Name: sol (13)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4777,7 +4777,7 @@ GameObject:
   - component: {fileID: 1087860748}
   - component: {fileID: 1087860747}
   m_Layer: 0
-  m_Name: sol (10)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5221,7 +5221,7 @@ GameObject:
   - component: {fileID: 1224822322}
   - component: {fileID: 1224822321}
   m_Layer: 0
-  m_Name: sol (15)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5780,7 +5780,7 @@ GameObject:
   - component: {fileID: 1405842167}
   - component: {fileID: 1405842166}
   m_Layer: 0
-  m_Name: sol (11)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5794,8 +5794,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405842164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9543, y: -13.3779, z: 0}
-  m_LocalScale: {x: 81.48886, y: 14.9212675, z: 1}
+  m_LocalPosition: {x: 2.9235, y: -13.3779, z: 0}
+  m_LocalScale: {x: 81.554054, y: 14.9212675, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 602476806}
@@ -7315,7 +7315,7 @@ GameObject:
   - component: {fileID: 1792590521}
   - component: {fileID: 1792590520}
   m_Layer: 0
-  m_Name: sol (4)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7743,7 +7743,7 @@ GameObject:
   - component: {fileID: 1878634179}
   - component: {fileID: 1878634178}
   m_Layer: 0
-  m_Name: sol (2)
+  m_Name: sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
