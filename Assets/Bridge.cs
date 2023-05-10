@@ -32,16 +32,18 @@ public class Bridge : MonoBehaviour
     {
         if (!player1.activeSelf) return;
 
-        if (Input.GetMouseButtonDown(0) || (Input.GetButtonDown("fire1") && !bridgeToCreate))
+        if (Input.GetMouseButtonDown(0) || (Input.GetKeyDown("joystick button 5") && !bridgeToCreate))
         {
-            startLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+           /* startLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);*/
+            startLocation = transform.position = new Vector3(transform.position.x + Input.GetAxis("RightHorizontal") * 0.01f, transform.position.y + Input.GetAxis("RightVertical") * 0.01f, transform.position.z);
             startLocation.z = 0;
 
             bridgeToCreate = Instantiate(bridge);
             bridgeToCreate.transform.position = startLocation;
+            Debug.Log("marche_ps4");
         }
 
-        if (Input.GetMouseButtonUp(0) || (Input.GetButtonUp("fire1") && !bridgeUp && bridgeToCreate))
+        if (Input.GetMouseButtonUp(0) || (Input.GetKeyUp("joystick button 5") && !bridgeUp && bridgeToCreate))
         {
             bridgeUp = true;
             bridgeToCreate.GetComponentInChildren<BoxCollider2D>().enabled = true;
@@ -49,9 +51,10 @@ public class Bridge : MonoBehaviour
             StartCoroutine(LifeSpanBridge());
         }
 
-        if (Input.GetMouseButton(0) || (Input.GetButton("fire1") && !bridgeUp))
+        if (Input.GetMouseButton(0) || (Input.GetKey("joystick button 5") && !bridgeUp))
         {
-            endLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            /*endLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);*/
+            endLocation = transform.position = new Vector3(transform.position.x + Input.GetAxis("RightHorizontal") * 0.01f, transform.position.y + Input.GetAxis("RightVertical") * 0.01f, transform.position.z);
             endLocation.z = 0;
             Vector3 direction = (endLocation - startLocation).normalized;
             if (bridgeToCreate)
