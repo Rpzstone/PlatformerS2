@@ -32,7 +32,7 @@ public class Bridge : MonoBehaviour
     {
         if (!player1.activeSelf) return;
 
-        if (Input.GetMouseButtonDown(0) /*|(Input.GetButtonDown("bridge")*/ && !bridgeToCreate)
+        if (Input.GetMouseButtonDown(0) || (Input.GetButtonDown("fire1") && !bridgeToCreate))
         {
             startLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             startLocation.z = 0;
@@ -41,7 +41,7 @@ public class Bridge : MonoBehaviour
             bridgeToCreate.transform.position = startLocation;
         }
 
-        if (Input.GetMouseButtonUp(0) /* | (Input.GetButtonUp("bridge")*/ && !bridgeUp && bridgeToCreate)
+        if (Input.GetMouseButtonUp(0) || (Input.GetButtonUp("fire1") && !bridgeUp && bridgeToCreate))
         {
             bridgeUp = true;
             bridgeToCreate.GetComponentInChildren<BoxCollider2D>().enabled = true;
@@ -49,7 +49,7 @@ public class Bridge : MonoBehaviour
             StartCoroutine(LifeSpanBridge());
         }
 
-        if (Input.GetMouseButton(0) /*| (Input.GetButton("bridge")*/ && !bridgeUp)
+        if (Input.GetMouseButton(0) || (Input.GetButton("fire1") && !bridgeUp))
         {
             endLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             endLocation.z = 0;
