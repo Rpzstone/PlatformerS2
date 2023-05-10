@@ -13,6 +13,7 @@ public class Bridge : MonoBehaviour
 
     BoxCollider2D bc;
     SpriteRenderer sr;
+    public GameObject cursor;
 
     Vector3 startLocation;
     Vector3 endLocation;
@@ -34,8 +35,8 @@ public class Bridge : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || (Input.GetKeyDown("joystick button 5") && !bridgeToCreate))
         {
-           /* startLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);*/
-            startLocation = transform.position = new Vector3(transform.position.x + Input.GetAxis("RightHorizontal") * 0.01f, transform.position.y + Input.GetAxis("RightVertical") * 0.01f, transform.position.z);
+            /* startLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);*/
+            startLocation = cursor.transform.position; // = new Vector3(transform.position.x + Input.GetAxis("RightHorizontal") * 0.01f, transform.position.y + Input.GetAxis("RightVertical") * 0.01f, transform.position.z);
             startLocation.z = 0;
 
             bridgeToCreate = Instantiate(bridge);
@@ -54,7 +55,7 @@ public class Bridge : MonoBehaviour
         if (Input.GetMouseButton(0) || (Input.GetKey("joystick button 5") && !bridgeUp))
         {
             /*endLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);*/
-            endLocation = transform.position = new Vector3(transform.position.x + Input.GetAxis("RightHorizontal") * 0.01f, transform.position.y + Input.GetAxis("RightVertical") * 0.01f, transform.position.z);
+            endLocation = cursor.transform.position; // = new Vector3(transform.position.x + Input.GetAxis("RightHorizontal") * 0.01f, transform.position.y + Input.GetAxis("RightVertical") * 0.01f, transform.position.z);
             endLocation.z = 0;
             Vector3 direction = (endLocation - startLocation).normalized;
             if (bridgeToCreate)

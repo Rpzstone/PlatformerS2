@@ -7716,6 +7716,7 @@ MonoBehaviour:
   newSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   bridge: {fileID: 2756803491551175504, guid: 22039f91fcf5ada4e9ae9ed55230dd7e, type: 3}
   player1: {fileID: 1947047975}
+  cursor: {fileID: 352359909}
 --- !u!4 &1874728362
 Transform:
   m_ObjectHideFlags: 0
