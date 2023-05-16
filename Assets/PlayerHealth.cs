@@ -31,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(34);
         }
+
+     
     }
 
     public void TakeDamage(int damage)
@@ -46,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
 
         }
     }
+    
 
     public IEnumerator InvincibilityFlash()
     {

@@ -11,6 +11,8 @@ public class PlayerMouvement : MonoBehaviour
     public float bounce;
     [SerializeField] bool isJumping = false;
     [SerializeField] bool canJump = false;
+    Animator an;
+    SpriteRenderer sr;
 
     
 
@@ -19,6 +21,8 @@ public class PlayerMouvement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        an = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
 
     }
 
@@ -27,6 +31,13 @@ public class PlayerMouvement : MonoBehaviour
     {
 
         horizontalValue = Input.GetAxis("Horizontal");
+
+        if (horizontalValue > 0) sr.flipX = false;
+        if (horizontalValue < 0) sr.flipX = true;
+
+        
+        an.SetFloat("speed",Mathf.Abs(horizontalValue));
+        
 
         if (Input.GetButtonDown("Jump") && canJump)
         {
