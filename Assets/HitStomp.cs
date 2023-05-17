@@ -29,12 +29,12 @@ public class HitStomp : MonoBehaviour
             if (Vector2.Dot(Vector2.down, rb2D.velocity) >= 0.5f){
                 Destroy(other.gameObject);
                 rb2D.velocity = new Vector2(rb2D.velocity.x, bounce);
-                Debug.Log("ennemis");
+                
             }
             else if(!playerHealth.isInvincible)
             {
                 playerHealth.TakeDamage(34);
-                Debug.Log("damage");
+               
             }
         }
     }
