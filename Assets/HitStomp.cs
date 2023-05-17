@@ -5,11 +5,14 @@ using UnityEngine;
 public class HitStomp : MonoBehaviour
 {
     public float bounce;
-    public Rigidbody2D rb2D;
+    private Rigidbody2D rb2D;
+    PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb2D = GetComponentInParent<Rigidbody2D>();
+
+        playerHealth = GetComponentInParent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -23,9 +26,16 @@ public class HitStomp : MonoBehaviour
         
         if(other.CompareTag("ennemis"))
         {
-            Destroy(other.gameObject);
-            rb2D.velocity = new Vector2(rb2D.velocity.x, bounce);
+            if (Vector2.Dot(Vector2.down, rb2D.velocity) >= 0.5f){
+                Destroy(other.gameObject);
+                rb2D.velocity = new Vector2(rb2D.velocity.x, bounce);
+                Debug.Log("ennemis");
+            }
+            else if(!playerHealth.isInvincible)
+            {
+                playerHealth.TakeDamage(34);
+                Debug.Log("damage");
+            }
         }
-       
     }
 }

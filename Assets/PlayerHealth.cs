@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         // le joueur commence avec toute sa vie
+        graphics = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -54,13 +55,10 @@ public class PlayerHealth : MonoBehaviour
     {
         while (isInvincible)
         {
-            ennemis.SetActive(false);
             graphics.color = new Color(1f, 1f, 1f, 0f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
             graphics.color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
-
-            ennemis.SetActive(true);
         }
         Debug.Log("Coroutine1");
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AddScore : MonoBehaviour
 {
     private ScoreInterface Score_Text;
+    private bool activated = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,8 @@ public class AddScore : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player2") { 
+        if (collision.tag == "Player2" && !activated) {
+            activated = true;
             Score_Text.updateScore();
             Destroy(gameObject);
         }
