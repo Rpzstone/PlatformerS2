@@ -6,12 +6,11 @@ using UnityEngine;
 public class swap_Player : MonoBehaviour
 {
     [SerializeField] GameObject OtherPlayer;
-    Animator animator;
-
+    private ScoreInterface Score_Text;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent< Animator > ();
+        Score_Text = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ScoreInterface>();
     }
 
     // Update is called once per frame
@@ -21,6 +20,10 @@ public class swap_Player : MonoBehaviour
         {
            /* animator.SetBool("changeChara", !animator.GetBool("changeChara"));*/
             OtherPlayer.SetActive(true);
+            if(OtherPlayer.tag == "Player2")
+            {
+                OtherPlayer.GetComponent<Animator>().SetLayerWeight(Score_Text.score, 1);
+            }
             OtherPlayer.transform.position = gameObject.transform.position;
             gameObject.SetActive(false);
         }
