@@ -43,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: pointeur
+    uniqueID: 700103843
+    locked: 0
   - name: fonds_champi
     uniqueID: 3499344035
     locked: 0
