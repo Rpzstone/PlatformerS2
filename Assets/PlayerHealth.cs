@@ -42,6 +42,13 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= damage;  // si on prends des degats ont retire de la vie a la vie actuelle
             healthBar.SetHealth(currentHealth); // pour mettre a jour le visuel de la barre de vie
+
+            if (currentHealth <= 0)
+            {
+                Die();
+                return;
+            }
+
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
@@ -50,6 +57,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     
+    public void Die()
+    {
+        Debug.Log("le joueur est éliminé");
+    }
 
     public IEnumerator InvincibilityFlash()
     {
