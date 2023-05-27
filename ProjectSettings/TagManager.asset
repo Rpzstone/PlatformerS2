@@ -73,3 +73,12 @@ TagManager:
   - name: champi_derriere
     uniqueID: 2103135977
     locked: 0
+  - name: cailloux
+    uniqueID: 2979552519
+    locked: 0
+  - name: ennemis
+    uniqueID: 2090583965
+    locked: 0
+  - name: fragments
+    uniqueID: 3857122995
+    locked: 0
