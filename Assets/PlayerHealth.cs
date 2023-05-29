@@ -59,6 +59,10 @@ public class PlayerHealth : MonoBehaviour
     
     public void Die()
     {
+        if (currentHealth <= 0)
+        {
+            FindObjectOfType<LevelManager>().Restart();
+        }
         Debug.Log("le joueur est éliminé");
     }
 
