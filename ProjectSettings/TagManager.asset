@@ -49,6 +49,9 @@ TagManager:
   - name: fonds_champi
     uniqueID: 3499344035
     locked: 0
+  - name: pont
+    uniqueID: 3780733237
+    locked: 0
   - name: campi_bleu
     uniqueID: 2296239131
     locked: 0
@@ -84,4 +87,7 @@ TagManager:
     locked: 0
   - name: loup
     uniqueID: 3302241501
+    locked: 0
+  - name: player
+    uniqueID: 3850679353
     locked: 0
