@@ -41,6 +41,7 @@ public class PlayerMouvement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && canJump)
         {
+            an.SetBool("jump", true);
             canJump = true;
             isJumping = true;
 
@@ -67,6 +68,7 @@ public class PlayerMouvement : MonoBehaviour
         if (collision.name == "sol")
         {
             canJump = true;
+            an.SetBool("jump", false);
         }
     }
 }
