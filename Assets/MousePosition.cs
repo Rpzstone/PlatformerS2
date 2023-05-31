@@ -28,7 +28,7 @@ public class MousePosition : MonoBehaviour
         /*Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         gameObject.transform.position = mousePosition;*/
         
-        transform.position = new Vector3(transform.position.x +Input.GetAxis("RightHorizontal") * 0.08f, transform.position.y+ Input.GetAxis("RightVertical")*0.01f, transform.position.z);
+        transform.position = new Vector3(transform.position.x +Input.GetAxis("RightHorizontal") * 0.08f * Time.deltaTime*150, transform.position.y+ Input.GetAxis("RightVertical")*0.08f*Time.deltaTime*150, transform.position.z);
 
 
 

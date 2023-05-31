@@ -10,4 +10,13 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    private void Start()
+    {
+
+        Screen.SetResolution(1920, 1080, true);
+
+
+
+    }
 }
