@@ -70,9 +70,6 @@ TagManager:
   - name: platforms
     uniqueID: 2837007097
     locked: 0
-  - name: perso
-    uniqueID: 3551319103
-    locked: 0
   - name: champi_derriere
     uniqueID: 2103135977
     locked: 0
@@ -90,4 +87,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 3850679353
+    locked: 0
+  - name: perso
+    uniqueID: 3551319103
     locked: 0

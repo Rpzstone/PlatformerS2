@@ -53,6 +53,7 @@ public class PlayerMouvement : MonoBehaviour
     {
         if (isJumping)
         {
+            an.SetBool("jump", true);
             isJumping = false;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             canJump = false;
